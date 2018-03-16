@@ -1,5 +1,4 @@
-##Java Training Project
-
+#Java Training Project
 ### First Day
 - complicated
 - got help
