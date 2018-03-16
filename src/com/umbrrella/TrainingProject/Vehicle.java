@@ -56,10 +56,10 @@ public class Vehicle {
 				break;
 			}
 			for (j = 0; j < seats[i].length; j++) {
+				int seat = i * seats[0].length + j + 1;
 				if (seats[i][j] == null) {
-					System.out.println("Empty");
+					System.out.println("Seat " + seat + ": " + "Empty");
 				} else {
-					int seat = i * seats[0].length + j + 1;
 					System.out.println("Seat " + seat + ": " + seats[i][j].getFirstName() + " " + seats[i][j].getLastName());
 				}
 			}

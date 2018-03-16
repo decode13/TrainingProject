@@ -19,10 +19,10 @@ public class Plane extends Vehicle {
 				break;
 			}
 			for (j = 0; j < seats[i].length; j++) {
+				String seat = (i + 1) + labels[j];
 				if (seats[i][j] == null) {
-					System.out.println("Empty");
-				} else {
-					String seat = (i + 1) + labels[j];
+					System.out.println("Seat " + seat + ": " + "Empty");
+				} else {					
 					System.out.println(
 							"Seat " + seat + ": " + seats[i][j].getFirstName() + " " + seats[i][j].getLastName());
 				}
