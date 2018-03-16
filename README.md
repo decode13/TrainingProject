@@ -1,8 +1,8 @@
-#Java Training Project
+##Java Training Project
 
-## First Day
+### First Day
 - complicated
 - got help
 
-## Second Day
+### Second Day
 - todo

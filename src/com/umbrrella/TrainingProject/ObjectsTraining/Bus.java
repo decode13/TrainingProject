@@ -1,19 +1,16 @@
-package com.umbrrella.TrainingProject;
+package com.umbrrella.TrainingProject.ObjectsTraining;
 
-public class Car extends Vehicle {
+public class Bus extends Vehicle {
 
-	public Car() {
+	public Bus() {
 
-		seats = new Passenger[2][2];
+		seats = new Passenger[4][2];
 
 	}
 
 	protected String reserveSeat(Passenger p) {
 		int i, j = 0;
 		boolean isSeated = false;
-		boolean hasDriverLicense = false;
-
-		hasDriverLicense = p.getDriverLicense();
 
 		for (i = 0; i < seats.length; i++) {
 			if (isSeated) {
@@ -22,8 +19,8 @@ public class Car extends Vehicle {
 			for (j = 0; j < seats[i].length; j++) {
 				if (seats[i][j] == null) {
 
-					if (i == 0 && j == 0) {
-						if (!hasDriverLicense) {
+					if (j == 1) {
+						if (seats[i][0] == null || !seats[i][0].getGender().equals(p.getGender())) {
 							continue;
 						}
 					}
@@ -39,5 +36,4 @@ public class Car extends Vehicle {
 
 		return seat + "";
 	}
-
 }

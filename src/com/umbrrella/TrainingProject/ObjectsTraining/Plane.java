@@ -1,4 +1,4 @@
-package com.umbrrella.TrainingProject;
+package com.umbrrella.TrainingProject.ObjectsTraining;
 
 public class Plane extends Vehicle {
 

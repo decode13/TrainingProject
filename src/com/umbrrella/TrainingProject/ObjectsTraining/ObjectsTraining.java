@@ -1,4 +1,4 @@
-package com.umbrrella.TrainingProject;
+package com.umbrrella.TrainingProject.ObjectsTraining;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -47,7 +47,7 @@ public class ObjectsTraining {
 					Car sedan = new Car();
 					sedan.setManufacturer("Volkswagen");
 					sedan.setModelNo("Passat");
-					sedan.plateNo = "B-01-CAR";
+					sedan.plateNo = "C-AR-902813";
 					header = header + sedan.getManufacturer() + " " + sedan.getModelNo() + ", plate number: "
 							+ sedan.plateNo;
 					System.out.println(header);
@@ -66,7 +66,7 @@ public class ObjectsTraining {
 					Bus smallBus = new Bus();
 					smallBus.setManufacturer("Iveco");
 					smallBus.setModelNo("Wheels");
-					smallBus.plateNo = "CJ-93-BUS";
+					smallBus.plateNo = "B-US-827643";
 					header = header + smallBus.getManufacturer() + " " + smallBus.getModelNo() + ", plate number: "
 							+ smallBus.plateNo;
 					System.out.println(header);
@@ -84,7 +84,7 @@ public class ObjectsTraining {
 					Plane tinyPlane = new Plane();
 					tinyPlane.setManufacturer("Airbus");
 					tinyPlane.setModelNo("Crow");
-					tinyPlane.plateNo = "AR 123199";
+					tinyPlane.plateNo = "DE-12319908";
 					header = header + tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo() + ", plate number: "
 							+ tinyPlane.plateNo;
 					System.out.println(header);
