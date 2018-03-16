@@ -15,7 +15,7 @@ public class ObjectsTraining {
 		BufferedReader br = null;
 		String line = "";
 		String cvsSplitBy = ",";
-		String[] vehicleType = new String[]{ "Car", "Bus", "Plane" };
+		String[] vehicleType = new String[] { "Car", "Bus", "Plane" };
 
 		try {
 
@@ -32,6 +32,7 @@ public class ObjectsTraining {
 
 				} catch (Exception e) {
 					continue;
+
 				}
 
 			}
