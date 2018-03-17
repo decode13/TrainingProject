@@ -71,7 +71,7 @@ public class Vehicle {
 					output = "Seat " + seat + ": " + "Empty";
 					System.out.println(output);// NOPMD
 				} else {
-					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " "
+					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " " // NOPMD - false LawOfDemeter
 							+ seats[rows][columns].getLastName();// NOPMD
 					System.out.println(output);// NOPMD
 				}

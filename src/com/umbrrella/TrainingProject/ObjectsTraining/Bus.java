@@ -23,7 +23,7 @@ public class Bus extends Vehicle { // NOPMD - short class name
 			for (columns = 0; columns < seats[rows].length; columns++) {
 				if (seats[rows][columns] == null) {
 
-					if ((seats[rows][0] == null || !seats[rows][0].getGender().equals(p.getGender())) && columns == 1) {
+					if ((seats[rows][0] == null || !seats[rows][0].getGender().equals(p.getGender())) && columns == 1) {  // NOPMD - false LawOfDemeter
 						continue;
 					}
 

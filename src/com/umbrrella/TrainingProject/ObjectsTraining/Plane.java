@@ -22,11 +22,12 @@ public class Plane extends Vehicle { // NOPMD - comment?
 				final String seat = rows + 1 + labels[columns];
 				if (seats[rows][columns] == null) {
 					output = "Seat " + seat + ": " + "Empty";
-					System.out.println(output);
+					System.out.println(output); // NOPMD - SystemPrintln
 				} else {
-					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " "
-							+ seats[rows][columns].getLastName();
-					System.out.println(output);
+					final String firstName = seats[rows][columns].getFirstName(); // NOPMD - False LawOfDemeter
+					final String lastName = seats[rows][columns].getLastName(); // NOPMD - False LawOfDemeter
+					output = "Seat " + seat + ": " + firstName + " " + lastName;
+					System.out.println(output); // NOPMD - SystemPrintln
 				}
 			}
 		}
