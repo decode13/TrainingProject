@@ -1,4 +1,4 @@
-package com.umbrrella.TrainingProject.ObjectsTraining;
+package com.umbrrella.java.training.objects;
 
 public class Car extends Vehicle { // NOPMD - short class name
 	/**

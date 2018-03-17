@@ -1,4 +1,4 @@
-package com.umbrrella.TrainingProject.ObjectsTraining;
+package com.umbrrella.java.training.objects;
 
 public class Passenger { // NOPMD - comment?
 	/**

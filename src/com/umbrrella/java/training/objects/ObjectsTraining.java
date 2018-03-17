@@ -1,4 +1,4 @@
-package com.umbrrella.TrainingProject.ObjectsTraining;
+package com.umbrrella.java.training.objects;
 /**
  * This is the main class.
  *
