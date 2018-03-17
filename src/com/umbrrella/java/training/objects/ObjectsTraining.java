@@ -43,7 +43,7 @@ public class ObjectsTraining {
 			}
 
 			final StringBuffer separator = new StringBuffer();
-			final StringBuffer header = new StringBuffer(64);
+			final StringBuffer header = new StringBuffer(512);
 
 			for (int v = 0; v < vehicleType.length; v++) {
 
