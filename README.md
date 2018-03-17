@@ -7,4 +7,5 @@ A series of training exercises.
 - got help
 
 ### Second Day
-- todo
+- Version 1.0.1 release
+- Code was inspected with PMD
