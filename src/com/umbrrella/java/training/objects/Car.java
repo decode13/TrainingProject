@@ -1,6 +1,6 @@
 package com.umbrrella.java.training.objects;
 
-public class Car extends Vehicle { // NOPMD - short class name
+public class Car extends Vehicle {  // NOPMD - comment
 	/**
 	 * Car subclass. Will override reserveSeat, so the seat 1 has driver license.
 	 *
