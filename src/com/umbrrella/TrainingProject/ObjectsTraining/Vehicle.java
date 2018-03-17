@@ -1,70 +1,81 @@
 package com.umbrrella.TrainingProject.ObjectsTraining;
 
+/**
+ * Vechicle base class. Will be extended by specific vehicles.
+ *
+ */
+
 public class Vehicle {
 
-	private String manufacturer;
-	private String modelNo;
-	
-	protected Passenger seats[][] = new Passenger[0][0];
-	protected String plateNo;
-	protected String destination;
+	private String manufacturer; // NOPMD
+	private String modelNo; // NOPMD
 
-	protected String getManufacturer() {
+	protected transient Passenger seats[][] = new Passenger[0][0]; // NOPMD
+	protected String plateNo; // NOPMD
+	protected String destination; // NOPMD
+	
+	protected Vehicle() { // NOPMD
+		// This constructor is intentionally empty. Nothing special is needed here.
+		
+	}
+	
+	protected String getManufacturer() { // NOPMD
 		return manufacturer;
 	}
 
-	protected String getModelNo() {
+	protected String getModelNo() { // NOPMD
 		return modelNo;
 	}
 
-	protected void setManufacturer(String manufacturer) {
+	protected void setManufacturer(final String manufacturer) { // NOPMD
 		this.manufacturer = manufacturer;
 	}
 
-	protected void setModelNo(String modelNo) {
+	protected void setModelNo(final String modelNo) { // NOPMD
 		this.modelNo = modelNo;
 	}
 
-	protected String reserveSeat(Passenger p) {
-		int i, j = 0;
+	protected String reserveSeat(final Passenger passenger) { // NOPMD
+		int rows = 0;
+		int columns = 0;
 		boolean isSeated = false;
 
-		for (i = 0; i < seats.length; i++) {
+		for (rows = 0; rows < seats.length; rows++) {
 			if (isSeated) {
 				break;
 			}
-			for (j = 0; j < seats[i].length; j++) {
-				if (seats[i][j] == null) {
-					seats[i][j] = p;
+			for (columns = 0; columns < seats[rows].length; columns++) {
+				if (seats[rows][columns] == null) {
+					seats[rows][columns] = passenger;
 					isSeated = true;
 					break;
 				}
 			}
 		}
 
-		int seat = (i - 1) * seats[0].length + j + 1;
+		final int seat = (rows - 1) * seats[0].length + columns + 1;
 
-		return seat + "";
+		return Integer.toString(seat);
 	}
 
-	protected void listSeats() {
-		int i, j = 0;
-		boolean isSeated = false;
-		
-		for (i = 0; i < seats.length; i++) {
-			if (isSeated) {
-				break;
-			}
-			for (j = 0; j < seats[i].length; j++) {
-				int seat = i * seats[0].length + j + 1;
-				if (seats[i][j] == null) {
-					System.out.println("Seat " + seat + ": " + "Empty");
+	protected void listSeats() { // NOPMD
+		int rows = 0;
+		int columns = 0;
+
+		for (rows = 0; rows < seats.length; rows++) {
+
+			for (columns = 0; columns < seats[rows].length; columns++) {
+				final int seat = rows * seats[0].length + columns + 1;
+				if (seats[rows][columns] == null) {
+					final String output = "Seat " + seat + ": " + "Empty";
+					System.out.println(output);// NOPMD
 				} else {
-					System.out.println("Seat " + seat + ": " + seats[i][j].getFirstName() + " " + seats[i][j].getLastName());
+					final String output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " " + seats[rows][columns].getLastName();//NOPMD
+					System.out.println(output);// NOPMD
 				}
 			}
 		}
-		
+
 	}
 
 }

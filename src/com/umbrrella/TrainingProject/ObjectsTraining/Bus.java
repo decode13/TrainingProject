@@ -24,7 +24,7 @@ public class Bus extends Vehicle {
 							continue;
 						}
 					}
-					
+
 					seats[i][j] = p;
 					isSeated = true;
 					break;

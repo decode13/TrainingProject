@@ -7,8 +7,8 @@ public class Plane extends Vehicle {
 		seats = new Passenger[4][5];
 
 	}
-	
-	String[] labels = new String[]{"A","B","C","D","E"};
+
+	String[] labels = new String[] { "A", "B", "C", "D", "E" };
 
 	protected void listSeats() {
 		int i, j = 0;
@@ -22,7 +22,7 @@ public class Plane extends Vehicle {
 				String seat = (i + 1) + labels[j];
 				if (seats[i][j] == null) {
 					System.out.println("Seat " + seat + ": " + "Empty");
-				} else {					
+				} else {
 					System.out.println(
 							"Seat " + seat + ": " + seats[i][j].getFirstName() + " " + seats[i][j].getLastName());
 				}
