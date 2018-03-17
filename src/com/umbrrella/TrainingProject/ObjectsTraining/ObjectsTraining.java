@@ -58,8 +58,9 @@ public class ObjectsTraining {
 					sedan.setManufacturer("Volkswagen");
 					sedan.setModelNo("Passat");
 					sedan.plateNo = "C-AR-902813";
-					header.append(
-							sedan.getManufacturer() + " " + sedan.getModelNo() + ", plate number: " + sedan.plateNo);
+					sedan.destination = "Munich";
+					header.append(sedan.getManufacturer() + " " + sedan.getModelNo() + ", plate number: "
+							+ sedan.plateNo + ", with destination: " + sedan.destination);
 					System.out.println(header); // NOPMD - false SystemPrintln
 					for (int h = 0; h < header.length(); h++) {
 						separator.append('-');
@@ -76,8 +77,9 @@ public class ObjectsTraining {
 					smallBus.setManufacturer("Iveco");
 					smallBus.setModelNo("Wheels");
 					smallBus.plateNo = "B-US-827643";
+					smallBus.destination = "Graz";
 					header.append(smallBus.getManufacturer() + " " + smallBus.getModelNo() + ", plate number: "
-							+ smallBus.plateNo);
+							+ smallBus.plateNo + ", with destination: " + smallBus.destination);
 					System.out.println(header); // NOPMD - false SystemPrintln
 
 					for (int h = 0; h < header.length(); h++) {
@@ -94,8 +96,9 @@ public class ObjectsTraining {
 					tinyPlane.setManufacturer("Airbus");
 					tinyPlane.setModelNo("Crow");
 					tinyPlane.plateNo = "DE-12319908";
+					tinyPlane.destination = "Paris";
 					header.append(tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo() + ", plate number: "
-							+ tinyPlane.plateNo);
+							+ tinyPlane.plateNo + ", with destination: " + tinyPlane.destination);
 					System.out.println(header); // NOPMD - false SystemPrintln
 					for (int h = 0; h < header.length(); h++) {
 						separator.append('-');
