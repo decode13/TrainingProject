@@ -1,43 +1,45 @@
 package com.umbrrella.TrainingProject.ObjectsTraining;
 
-public class Car extends Vehicle {
-
+public class Car extends Vehicle { // NOPMD - short class name
+	/**
+	 * Car subclass. Will override reserveSeat, so the seat 1 has driver license.
+	 *
+	 */
 	public Car() {
-
+		super();
 		seats = new Passenger[2][2];
 
 	}
 
-	protected String reserveSeat(Passenger p) {
-		int i, j = 0;
+	protected String reserveSeat(final Passenger passenger) { // NOPMD - comment
+		int rows = 0;
+		int columns = 0;
 		boolean isSeated = false;
 		boolean hasDriverLicense = false;
 
-		hasDriverLicense = p.getDriverLicense();
+		hasDriverLicense = passenger.isDriverLicense();
 
-		for (i = 0; i < seats.length; i++) {
+		for (rows = 0; rows < seats.length; rows++) {
 			if (isSeated) {
 				break;
 			}
-			for (j = 0; j < seats[i].length; j++) {
-				if (seats[i][j] == null) {
+			for (columns = 0; columns < seats[rows].length; columns++) {
+				if (seats[rows][columns] == null) {
 
-					if (i == 0 && j == 0) {
-						if (!hasDriverLicense) {
-							continue;
-						}
+					if (rows == 0 && columns == 0 && !hasDriverLicense) {
+						continue;
 					}
 
-					seats[i][j] = p;
+					seats[rows][columns] = passenger;
 					isSeated = true;
 					break;
 				}
 			}
 		}
 
-		int seat = (i - 1) * seats[0].length + j + 1;
+		final int seat = (rows - 1) * seats[0].length + columns + 1;
 
-		return seat + "";
+		return Integer.toString(seat);
 	}
 
 }

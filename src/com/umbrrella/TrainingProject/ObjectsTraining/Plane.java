@@ -1,30 +1,32 @@
 package com.umbrrella.TrainingProject.ObjectsTraining;
 
-public class Plane extends Vehicle {
-
+public class Plane extends Vehicle { // NOPMD - comment?
+	/**
+	 * Plane subclass. Will override listSeats, so numbering columns has letters.
+	 *
+	 */
 	public Plane() {
-
+		super();
 		seats = new Passenger[4][5];
 
 	}
 
-	String[] labels = new String[] { "A", "B", "C", "D", "E" };
+	protected void listSeats() { // NOPMD - comment
+		int rows = 0;
+		int columns = 0;
+		String output;
+		final String[] labels = new String[] { "A", "B", "C", "D", "E" };
 
-	protected void listSeats() {
-		int i, j = 0;
-		boolean isSeated = false;
-
-		for (i = 0; i < seats.length; i++) {
-			if (isSeated) {
-				break;
-			}
-			for (j = 0; j < seats[i].length; j++) {
-				String seat = (i + 1) + labels[j];
-				if (seats[i][j] == null) {
-					System.out.println("Seat " + seat + ": " + "Empty");
+		for (rows = 0; rows < seats.length; rows++) {
+			for (columns = 0; columns < seats[rows].length; columns++) {
+				final String seat = rows + 1 + labels[columns];
+				if (seats[rows][columns] == null) {
+					output = "Seat " + seat + ": " + "Empty";
+					System.out.println(output);
 				} else {
-					System.out.println(
-							"Seat " + seat + ": " + seats[i][j].getFirstName() + " " + seats[i][j].getLastName());
+					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " "
+							+ seats[rows][columns].getLastName();
+					System.out.println(output);
 				}
 			}
 		}

@@ -13,14 +13,14 @@ import java.util.List;
 
 public class ObjectsTraining {
 
-
 	public static void main(String[] args) { // NOPMD - comment
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
 		BufferedReader passengerFile = null;
 		String line = "";
-		final String cvsSplitBy = ",";
+		final String cvsSplitBy = ","; // NOPMD
 		final String[] vehicleType = new String[] { "Car", "Bus", "Plane" };
+		String output = "";
 
 		try {
 
@@ -35,7 +35,7 @@ public class ObjectsTraining {
 
 					passengerList.add(new Passenger(csvLine)); // NOPMD
 
-				} catch (Exception e) {
+				} catch (Exception e) { // NOPMD - AvoidCatchingGenericException
 					continue;
 
 				}
@@ -43,21 +43,23 @@ public class ObjectsTraining {
 			}
 
 			final StringBuffer separator = new StringBuffer();
-			
+			final StringBuffer header = new StringBuffer(64);
+
 			for (int v = 0; v < vehicleType.length; v++) {
 
-				StringBuffer header = new StringBuffer();
+				header.replace(0, header.length(), "");
 				header.append("Seating for vehicle type: " + vehicleType[v] + ", model: ");
-				separator.setLength(0); 
+				separator.replace(0, separator.length(), "");
 
 				System.out.println("");
 
-				if (vehicleType[v] == "Car") { // NOPMD
+				if (vehicleType[v] == "Car") { // NOPMD - AvoidLiteralsInIfCondition
 					final Car sedan = new Car(); // NOPMD - AvoidInstantiatingObjectsInLoops
 					sedan.setManufacturer("Volkswagen");
 					sedan.setModelNo("Passat");
 					sedan.plateNo = "C-AR-902813";
-					header.append(sedan.getManufacturer() + " " + sedan.getModelNo() + ", plate number: " + sedan.plateNo);
+					header.append(
+							sedan.getManufacturer() + " " + sedan.getModelNo() + ", plate number: " + sedan.plateNo);
 					System.out.println(header);
 					for (int h = 0; h < header.length(); h++) {
 						separator.append('-');
@@ -69,14 +71,15 @@ public class ObjectsTraining {
 					}
 					sedan.listSeats();
 
-				} else if (vehicleType[v] == "Bus") { // NOPMD
+				} else if (vehicleType[v] == "Bus") { // NOPMD - AvoidLiteralsInIfCondition
 					final Bus smallBus = new Bus(); // NOPMD - AvoidInstantiatingObjectsInLoops
 					smallBus.setManufacturer("Iveco");
 					smallBus.setModelNo("Wheels");
 					smallBus.plateNo = "B-US-827643";
-					header.append(smallBus.getManufacturer() + " " + smallBus.getModelNo() + ", plate number: " + smallBus.plateNo);
+					header.append(smallBus.getManufacturer() + " " + smallBus.getModelNo() + ", plate number: "
+							+ smallBus.plateNo);
 					System.out.println(header);
-					
+
 					for (int h = 0; h < header.length(); h++) {
 						separator.append('-');
 					}
@@ -86,12 +89,13 @@ public class ObjectsTraining {
 						smallBus.reserveSeat(passengerList.get(p));
 					}
 					smallBus.listSeats();
-				} else if (vehicleType[v] == "Plane") { // NOPMD
+				} else if (vehicleType[v] == "Plane") { // NOPMD - AvoidLiteralsInIfCondition
 					final Plane tinyPlane = new Plane(); // NOPMD - AvoidInstantiatingObjectsInLoops
 					tinyPlane.setManufacturer("Airbus");
 					tinyPlane.setModelNo("Crow");
 					tinyPlane.plateNo = "DE-12319908";
-					header.append(tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo() + ", plate number: " + tinyPlane.plateNo);
+					header.append(tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo() + ", plate number: "
+							+ tinyPlane.plateNo);
 					System.out.println(header);
 					for (int h = 0; h < header.length(); h++) {
 						separator.append('-');
@@ -103,22 +107,25 @@ public class ObjectsTraining {
 					}
 					tinyPlane.listSeats();
 				} else {
-					System.out.println(vehicleType[v] + " vehicle type is: Unknown");
+					output = vehicleType[v] + " vehicle type is: Unknown";
+					System.out.println(output);
 					continue;
 				}
 
 			}
 
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			System.err.println("PassengerList file was not found!");
 		} catch (IOException e) {
-			e.printStackTrace();
+			// e.printStackTrace();
+			System.err.println("Unknown file error was found!");
 		} finally {
 			if (passengerFile != null) {
 				try {
 					passengerFile.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					// e.printStackTrace();
+					System.err.println("Unknown file error was found!");
 				}
 			}
 		}

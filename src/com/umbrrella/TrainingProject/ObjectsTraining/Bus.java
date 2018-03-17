@@ -1,39 +1,41 @@
 package com.umbrrella.TrainingProject.ObjectsTraining;
 
-public class Bus extends Vehicle {
-
+public class Bus extends Vehicle { // NOPMD - short class name
+	/**
+	 * Bus subclass. Will override reserveSeat, so the no same gender on same row.
+	 *
+	 */
 	public Bus() {
-
+		super();
 		seats = new Passenger[4][2];
 
 	}
 
-	protected String reserveSeat(Passenger p) {
-		int i, j = 0;
+	protected String reserveSeat(Passenger p) { // NOPMD - comment
+		int rows = 0;
+		int columns = 0;
 		boolean isSeated = false;
 
-		for (i = 0; i < seats.length; i++) {
+		for (rows = 0; rows < seats.length; rows++) {
 			if (isSeated) {
 				break;
 			}
-			for (j = 0; j < seats[i].length; j++) {
-				if (seats[i][j] == null) {
+			for (columns = 0; columns < seats[rows].length; columns++) {
+				if (seats[rows][columns] == null) {
 
-					if (j == 1) {
-						if (seats[i][0] == null || !seats[i][0].getGender().equals(p.getGender())) {
-							continue;
-						}
+					if ((seats[rows][0] == null || !seats[rows][0].getGender().equals(p.getGender())) && columns == 1) {
+						continue;
 					}
 
-					seats[i][j] = p;
+					seats[rows][columns] = p;
 					isSeated = true;
 					break;
 				}
 			}
 		}
 
-		int seat = (i - 1) * seats[0].length + j + 1;
+		final int seat = (rows - 1) * seats[0].length + columns + 1;
 
-		return seat + "";
+		return Integer.toString(seat);
 	}
 }

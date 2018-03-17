@@ -13,12 +13,12 @@ public class Vehicle {
 	protected transient Passenger seats[][] = new Passenger[0][0]; // NOPMD
 	protected String plateNo; // NOPMD
 	protected String destination; // NOPMD
-	
+
 	protected Vehicle() { // NOPMD
 		// This constructor is intentionally empty. Nothing special is needed here.
-		
+
 	}
-	
+
 	protected String getManufacturer() { // NOPMD
 		return manufacturer;
 	}
@@ -61,16 +61,18 @@ public class Vehicle {
 	protected void listSeats() { // NOPMD
 		int rows = 0;
 		int columns = 0;
+		String output;
 
 		for (rows = 0; rows < seats.length; rows++) {
 
 			for (columns = 0; columns < seats[rows].length; columns++) {
 				final int seat = rows * seats[0].length + columns + 1;
 				if (seats[rows][columns] == null) {
-					final String output = "Seat " + seat + ": " + "Empty";
+					output = "Seat " + seat + ": " + "Empty";
 					System.out.println(output);// NOPMD
 				} else {
-					final String output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " " + seats[rows][columns].getLastName();//NOPMD
+					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " "
+							+ seats[rows][columns].getLastName();// NOPMD
 					System.out.println(output);// NOPMD
 				}
 			}
