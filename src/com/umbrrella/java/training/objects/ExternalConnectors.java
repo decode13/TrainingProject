@@ -20,7 +20,7 @@ final public class ExternalConnectors {
 		// Nothing to do here.
 	}
 
-	public static List<String> ReadFromCSV(final String fileName) {
+	public static List<String> readFromCSV(final String fileName) {
 		
 		final Path pathToFile = Paths.get(fileName);
 		final List<String> output = new ArrayList<String>();

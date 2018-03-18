@@ -14,9 +14,9 @@ final public class PassengerSeating {
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
 
-		CarSeatReservation(csvFile);
-		BusSeatReservation(csvFile);
-		PlaneSeatReservation(csvFile);
+		carSeatReservation(csvFile);
+		busSeatReservation(csvFile);
+		planeSeatReservation(csvFile);
 		
 	}
 
@@ -24,7 +24,7 @@ final public class PassengerSeating {
 		// Nothing to do here.
 	}
 	
-	private static void CarSeatReservation (final String csvFile) {
+	private static void carSeatReservation (final String csvFile) {
 		final StringBuffer separator = new StringBuffer();
 		final StringBuffer header = new StringBuffer(512);
 		String vehicleType = "Car"; // NOPMD on 18/03/18 18:50, with reason: LocalVariableCouldBeFinal
@@ -46,7 +46,7 @@ final public class PassengerSeating {
 		}
 		System.out.println(separator); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 
-		final List<Passenger> passengerList = GetPassengerList.GetFromCSV(csvFile);
+		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
 			sedan.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
 		}
@@ -55,7 +55,7 @@ final public class PassengerSeating {
 
 	}
 	
-	private static void BusSeatReservation (final String csvFile) {
+	private static void busSeatReservation (final String csvFile) {
 		final StringBuffer separator = new StringBuffer();
 		final StringBuffer header = new StringBuffer(512);
 		String vehicleType = "Bus"; // NOPMD on 18/03/18 18:50, with reason: LocalVariableCouldBeFinal
@@ -78,7 +78,7 @@ final public class PassengerSeating {
 		}
 		System.out.println(separator); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 		
-		final List<Passenger> passengerList = GetPassengerList.GetFromCSV(csvFile);
+		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
 		smallBus.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
 		}
@@ -86,7 +86,7 @@ final public class PassengerSeating {
 		System.out.println(""); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 	}
 
-	private static void PlaneSeatReservation (final String csvFile) {
+	private static void planeSeatReservation (final String csvFile) {
 		final StringBuffer separator = new StringBuffer();
 		final StringBuffer header = new StringBuffer(512);
 		String vehicleType = "Plane"; // NOPMD on 18/03/18 18:50, with reason: LocalVariableCouldBeFinal
@@ -108,7 +108,7 @@ final public class PassengerSeating {
 		}
 		System.out.println(separator); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 		
-		final List<Passenger> passengerList = GetPassengerList.GetFromCSV(csvFile);
+		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
 		tinyPlane.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
 		}

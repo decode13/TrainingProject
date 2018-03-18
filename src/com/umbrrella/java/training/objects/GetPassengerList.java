@@ -19,14 +19,14 @@ final public class GetPassengerList {
 	/**
 	 * @param args
 	 */
-	public static List<Passenger> GetFromCSV(final String csvFile) {
+	public static List<Passenger> getFromCSV(final String csvFile) {
 		
 		String csvDelimiter = ",";  // NOPMD on 18/03/18 18:04, with reason: LocalVariableCouldBeFinal
 		List<String> csvLines = new ArrayList<String>();
 		
 		final List<Passenger> newPassengerList = new ArrayList<Passenger>();
 		
-		csvLines = ExternalConnectors.ReadFromCSV(csvFile);
+		csvLines = ExternalConnectors.readFromCSV(csvFile);
 		
 		for (int line = 0; line < csvLines.size(); line++) { // NOPMD on 18/03/18 18:06, with reason: LawOfDemeter
 			
