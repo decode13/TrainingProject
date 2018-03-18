@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * This is the main class.
  */
-public class ObjectsTraining {
+public class PassengerSeating {
 
 	/**
 	 * ObjectsTraining class comments
@@ -18,34 +18,10 @@ public class ObjectsTraining {
 	public static void main(final String[] args) {
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
-		BufferedReader passengerFile = null;
-		String line = "";
-		String cvsSplitBy = ","; // NOPMD on 18/03/18 13:59, with reason: LocalVariableCouldBeFinal
+		final StringBuffer separator = new StringBuffer();
+		final StringBuffer header = new StringBuffer(512);
 		final String[] vehicleType = new String[] { "Car", "Bus", "Plane" };
 		String output = "";
-
-		try {
-
-			passengerFile = new BufferedReader(new FileReader(csvFile));
-			final List<Passenger> passengerList = new ArrayList<>();
-
-			while ((line = passengerFile.readLine()) != null) { // NOPMD on 18/03/18 14:01, with reason:
-																// AssignmentInOperand
-
-				final String[] csvLine = line.split(cvsSplitBy); // NOPMD on 18/03/18 14:02, with reason: LawOfDemeter
-
-				try {
-
-					passengerList.add(new Passenger(csvLine)); // NOPMD on 18/03/18 14:04, with reason:
-																// AvoidInstantiatingObjectsInLoops
-
-				} catch (Exception e) { // NOPMD on 18/03/18 14:05, with reason: AvoidCatchingGenericException
-					continue;
-				}
-			}
-
-			final StringBuffer separator = new StringBuffer();
-			final StringBuffer header = new StringBuffer(512);
 
 			for (int v = 0; v < vehicleType.length; v++) {
 
@@ -70,7 +46,8 @@ public class ObjectsTraining {
 						separator.append('-');
 					}
 					System.out.println(separator); // NOPMD on 18/03/18 14:07, with reason: SystemPrintln
-
+					
+					List<Passenger> passengerList = GetPassengerList.GetFromCSV(csvFile);
 					for (int p = 0; p < passengerList.size(); p++) {
 						sedan.reserveSeat(passengerList.get(p));
 					}
@@ -92,7 +69,8 @@ public class ObjectsTraining {
 						separator.append('-');
 					}
 					System.out.println(separator); // NOPMD on 18/03/18 14:07, with reason: SystemPrintln
-
+					
+					List<Passenger> passengerList = GetPassengerList.GetFromCSV(csvFile);
 					for (int p = 0; p < passengerList.size(); p++) {
 						smallBus.reserveSeat(passengerList.get(p));
 					}
@@ -112,7 +90,8 @@ public class ObjectsTraining {
 						separator.append('-');
 					}
 					System.out.println(separator); // NOPMD on 18/03/18 14:06, with reason: SystemPrintln
-
+					
+					List<Passenger> passengerList = GetPassengerList.GetFromCSV(csvFile);
 					for (int p = 0; p < passengerList.size(); p++) {
 						tinyPlane.reserveSeat(passengerList.get(p));
 					}
@@ -124,25 +103,6 @@ public class ObjectsTraining {
 				}
 
 			}
-
-		} catch (FileNotFoundException e) {
-			System.err.println("PassengerList file was not found!"); // NOPMD on 18/03/18 14:06, with reason:
-																		// SystemPrintln
-		} catch (IOException e) {
-			// e.printStackTrace();
-			System.err.println("Unknown file error was found!"); // NOPMD on 18/03/18 14:07, with reason: SystemPrintln
-		} finally {
-			if (passengerFile != null) {
-				try {
-					passengerFile.close();
-				} catch (IOException e) {
-					// e.printStackTrace();
-					System.err.println("Unknown file error was found!"); // NOPMD on 18/03/18 14:07, with reason:
-																			// SystemPrintln
-				}
-			}
-		}
-
 	}
 
 }
