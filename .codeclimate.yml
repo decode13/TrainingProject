@@ -5,3 +5,7 @@ engines:
       languages:
         java:
           mass_threshold: 200
+  method-complexity:
+    config:
+      threshold: 15
+
