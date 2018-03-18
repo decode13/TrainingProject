@@ -15,7 +15,7 @@ public class ObjectsTraining {
 	/**
 	 * ObjectsTraining class comments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
 		BufferedReader passengerFile = null;

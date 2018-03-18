@@ -40,52 +40,42 @@ public class Passenger {
 		this.gender = gender;
 	}
 
-	/** Getters / Setters comment */
 	public int getPassengerID() {
 		return passengerID;
 	}
 
-	/** Getters / Setters comment */
 	public void setPassengerID(final int passengerID) {
 		this.passengerID = passengerID;
 	}
 
-	/** Getters / Setters comment */
 	public String getFirstName() {
 		return firstName;
 	}
 
-	/** Getters / Setters comment */
 	public void setFirstName(final String firstName) {
 		this.firstName = firstName;
 	}
 
-	/** Getters / Setters comment */
 	public String getLastName() {
 		return lastName;
 	}
 
-	/** Getters / Setters comment */
 	public void setLastName(final String lastName) {
 		this.lastName = lastName;
 	}
 
-	/** Getters / Setters comment */
 	public boolean isDriverLicense() {
 		return driverLicense;
 	}
 
-	/** Getters / Setters comment */
 	public void setDriverLicense(final boolean driverLicense) {
 		this.driverLicense = driverLicense;
 	}
 
-	/** Getters / Setters comment */
 	public String getGender() {
 		return gender;
 	}
 
-	/** Getters / Setters comment */
 	public void setGender(final String gender) {
 		this.gender = gender;
 	}
