@@ -9,3 +9,8 @@ A series of training exercises.
 ### Second Day
 - Version 1.0.1 release
 - Code was inspected with PMD
+
+### Third Day
+- Version 1.0.2 release
+- Code review
+- Static code analysis with PMD, Codeclimate, Codacy
