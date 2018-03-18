@@ -34,8 +34,8 @@ final public class PassengerSeating {
 		sedan.setModelNo("Passat");
 		sedan.plateNo = "C-AR-902813";
 		sedan.destination = "Munich";
-		header.append("Seating for vehicle type: Car, model: " + sedan.getManufacturer() + " "
-				+ sedan.getModelNo() + ", plate number: " + sedan.plateNo + ", with destination: " + sedan.destination);
+		header.append("Seating for vehicle type: Car, model: " + sedan.getManufacturer() + " " + sedan.getModelNo()
+				+ ", plate number: " + sedan.plateNo + ", with destination: " + sedan.destination);
 		System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 		for (int h = 0; h < header.length(); h++) {
 			separator.append('-');
@@ -56,17 +56,14 @@ final public class PassengerSeating {
 		final StringBuffer header = new StringBuffer(512);
 		String vehicleType = "Bus"; // NOPMD on 18/03/18 18:50, with reason: LocalVariableCouldBeFinal
 
-		header.replace(0, header.length(), "");
-		header.append("Seating for vehicle type: " + vehicleType + ", model: ");
-		separator.replace(0, separator.length(), "");
-
 		final Bus smallBus = new Bus();
 		smallBus.setManufacturer("Iveco");
 		smallBus.setModelNo("Wheels");
 		smallBus.plateNo = "B-US-827643";
 		smallBus.destination = "Graz";
-		header.append(smallBus.getManufacturer() + " " + smallBus.getModelNo() + ", plate number: " + smallBus.plateNo
-				+ ", with destination: " + smallBus.destination);
+		header.append(
+				"Seating for vehicle type: Bus, model: " + smallBus.getManufacturer() + " " + smallBus.getModelNo()
+						+ ", plate number: " + smallBus.plateNo + ", with destination: " + smallBus.destination);
 		System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 
 		for (int h = 0; h < header.length(); h++) {
@@ -87,17 +84,14 @@ final public class PassengerSeating {
 		final StringBuffer header = new StringBuffer(512);
 		String vehicleType = "Plane"; // NOPMD on 18/03/18 18:50, with reason: LocalVariableCouldBeFinal
 
-		header.replace(0, header.length(), "");
-		header.append("Seating for vehicle type: " + vehicleType + ", model: ");
-		separator.replace(0, separator.length(), "");
-
 		final Plane tinyPlane = new Plane();
 		tinyPlane.setManufacturer("Airbus");
 		tinyPlane.setModelNo("Crow");
 		tinyPlane.plateNo = "DE-12319908";
 		tinyPlane.destination = "Paris";
-		header.append(tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo() + ", plate number: "
-				+ tinyPlane.plateNo + ", with destination: " + tinyPlane.destination);
+		header.append(
+				"Seating for vehicle type: Plane, model: " + tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo()
+						+ ", plate number: " + tinyPlane.plateNo + ", with destination: " + tinyPlane.destination);
 		System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 		for (int h = 0; h < header.length(); h++) {
 			separator.append('-');
