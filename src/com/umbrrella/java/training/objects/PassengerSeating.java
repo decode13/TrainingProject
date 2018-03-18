@@ -2,8 +2,6 @@ package com.umbrrella.java.training.objects;
 
 import java.util.List;
 
-import javafx.scene.control.Separator;
-
 /**
  * This is the main class.
  */
@@ -15,9 +13,9 @@ final public class PassengerSeating {
 	public static void main(final String[] args) {
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
-		
-		PassengerSeating seating = new PassengerSeating();
-		
+
+		final PassengerSeating seating = new PassengerSeating();
+
 		seating.carSeatReservation(csvFile);
 		seating.busSeatReservation(csvFile);
 		seating.planeSeatReservation(csvFile);
@@ -39,7 +37,8 @@ final public class PassengerSeating {
 		header.append("Seating for vehicle type: Car, model: " + sedan.getManufacturer() + " " + sedan.getModelNo()
 				+ ", plate number: " + sedan.plateNo + ", with destination: " + sedan.destination);
 		System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:51, with reason:
+																		// SystemPrintln
 
 		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
@@ -62,7 +61,8 @@ final public class PassengerSeating {
 				"Seating for vehicle type: Bus, model: " + smallBus.getManufacturer() + " " + smallBus.getModelNo()
 						+ ", plate number: " + smallBus.plateNo + ", with destination: " + smallBus.destination);
 		System.out.println(header.toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
+		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:52, with reason:
+																		// SystemPrintln
 
 		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:52, with reason: LawOfDemeter
@@ -84,7 +84,8 @@ final public class PassengerSeating {
 				"Seating for vehicle type: Plane, model: " + tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo()
 						+ ", plate number: " + tinyPlane.plateNo + ", with destination: " + tinyPlane.destination);
 		System.out.println(header.toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:53, with reason:
+																		// SystemPrintln
 
 		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:53, with reason: LawOfDemeter
@@ -93,15 +94,15 @@ final public class PassengerSeating {
 		tinyPlane.listSeats();
 		System.out.println(""); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 	}
-	
-	private static StringBuffer sepparator (String title) {
-		
+
+	private static StringBuffer sepparator(final String title) {
+
 		final StringBuffer separator = new StringBuffer();
 		for (int h = 0; h < title.length(); h++) {
 			separator.append('-');
 		}
-		
-		return separator;	
-		
+
+		return separator;
+
 	}
 }
