@@ -14,12 +14,16 @@ import java.util.List;
 /**
  *
  */
-public class ExternalConnectors {
+final public class ExternalConnectors {
+	
+	private ExternalConnectors() {
+		// Nothing to do here.
+	}
 
 	public static List<String> ReadFromCSV(final String fileName) {
 		
-		Path pathToFile = Paths.get(fileName);
-		List<String> output = new ArrayList<String>();
+		final Path pathToFile = Paths.get(fileName);
+		final List<String> output = new ArrayList<String>();
 		
 		try (BufferedReader buffer = Files.newBufferedReader(pathToFile)) {
 			
@@ -33,7 +37,7 @@ public class ExternalConnectors {
 				
 			}
 		} catch (IOException e) {
-            e.printStackTrace();
+			System.err.println("Error reading file: " + fileName); // NOPMD on 18/03/18 17:51, with reason: SystemPrintln
         }
 		
 		return output;

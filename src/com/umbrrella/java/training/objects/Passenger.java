@@ -79,12 +79,11 @@ public class Passenger {
 	public void setGender(final String gender) {
 		this.gender = gender;
 	}
-	
+
 	@Override
 	public String toString() {
 
-		final String output = ("passengerID: " + Integer.toString(passengerID) + ", firstName: " + firstName
-				+ ", lastName: " + lastName + ", driverLicense: " + driverLicense + ", gender: " + gender);
-		return output;
+		return "passengerID: " + Integer.toString(passengerID) + ", firstName: " + firstName + ", lastName: " + lastName
+				+ ", driverLicense: " + driverLicense + ", gender: " + gender;
 	}
 }
