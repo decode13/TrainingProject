@@ -1,3 +1,4 @@
+version: "2"
 engines:
   duplication:
     enabled: true
@@ -5,6 +6,7 @@ engines:
       languages:
         java:
           mass_threshold: 200
+checks:
   method-complexity:
     config:
       threshold: 15
