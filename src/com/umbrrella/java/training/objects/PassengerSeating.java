@@ -59,15 +59,15 @@ final public class PassengerSeating {
 		header.append(
 				"Seating for vehicle type: Bus, model: " + smallBus.getManufacturer() + " " + smallBus.getModelNo()
 						+ ", plate number: " + smallBus.plateNo + ", with destination: " + smallBus.destination);
-		System.out.println(header.toString()); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+		System.out.println(header.toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
+		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
 
 		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
-		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
-			smallBus.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
+		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:52, with reason: LawOfDemeter
+			smallBus.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:52, with reason: LawOfDemeter
 		}
 		smallBus.listSeats();
-		System.out.println(""); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+		System.out.println(""); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
 	}
 
 	private static void planeSeatReservation(final String csvFile) {
@@ -81,15 +81,15 @@ final public class PassengerSeating {
 		header.append(
 				"Seating for vehicle type: Plane, model: " + tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo()
 						+ ", plate number: " + tinyPlane.plateNo + ", with destination: " + tinyPlane.destination);
-		System.out.println(header.toString()); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+		System.out.println(header.toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+		System.out.println(sepparator(header.toString()).toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 
 		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
-		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
-			tinyPlane.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:51, with reason: LawOfDemeter
+		for (int p = 0; p < passengerList.size(); p++) { // NOPMD on 18/03/18 18:53, with reason: LawOfDemeter
+			tinyPlane.reserveSeat(passengerList.get(p)); // NOPMD on 18/03/18 18:53, with reason: LawOfDemeter
 		}
 		tinyPlane.listSeats();
-		System.out.println(""); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+		System.out.println(""); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 	}
 	
 	private static StringBuffer sepparator (String title) {

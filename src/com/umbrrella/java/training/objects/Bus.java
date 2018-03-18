@@ -13,6 +13,7 @@ public class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: Shor
 	}
 
 	/** Method comment */
+	@Override
 	protected String reserveSeat(final Passenger passenger) {
 		int rows = 0;
 		int columns = 0;

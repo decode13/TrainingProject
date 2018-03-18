@@ -13,6 +13,7 @@ public class Plane extends Vehicle {
 	}
 
 	/** @see com.umbrrella.java.training.objects.Vehicle#listSeats() */
+	@Override
 	protected void listSeats() {
 		int rows = 0;
 		int columns = 0;
