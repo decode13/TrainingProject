@@ -27,22 +27,18 @@ public class Vehicle {
 		// Nothing special is needed here.
 	}
 
-	/** Getters / Setters comment */
 	protected String getManufacturer() {
 		return manufacturer;
 	}
 
-	/** Getters / Setters comment */
 	protected String getModelNo() {
 		return modelNo;
 	}
 
-	/** Getters / Setters comment */
 	protected void setManufacturer(final String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
 
-	/** Getters / Setters comment */
 	protected void setModelNo(final String modelNo) {
 		this.modelNo = modelNo;
 	}
