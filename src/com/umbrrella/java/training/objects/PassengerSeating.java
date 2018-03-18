@@ -15,10 +15,12 @@ final public class PassengerSeating {
 	public static void main(final String[] args) {
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
-
-		carSeatReservation(csvFile);
-		busSeatReservation(csvFile);
-		planeSeatReservation(csvFile);
+		
+		PassengerSeating seating = new PassengerSeating();
+		
+		seating.carSeatReservation(csvFile);
+		seating.busSeatReservation(csvFile);
+		seating.planeSeatReservation(csvFile);
 
 	}
 
@@ -26,7 +28,7 @@ final public class PassengerSeating {
 		// Nothing to do here.
 	}
 
-	private static void carSeatReservation(final String csvFile) {
+	private void carSeatReservation(final String csvFile) {
 		final StringBuffer header = new StringBuffer(128);
 
 		final Car sedan = new Car();
@@ -48,7 +50,7 @@ final public class PassengerSeating {
 
 	}
 
-	private static void busSeatReservation(final String csvFile) {
+	private void busSeatReservation(final String csvFile) {
 		final StringBuffer header = new StringBuffer(128);
 
 		final Bus smallBus = new Bus();
@@ -70,7 +72,7 @@ final public class PassengerSeating {
 		System.out.println(""); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
 	}
 
-	private static void planeSeatReservation(final String csvFile) {
+	private void planeSeatReservation(final String csvFile) {
 		final StringBuffer header = new StringBuffer(128);
 
 		final Plane tinyPlane = new Plane();
