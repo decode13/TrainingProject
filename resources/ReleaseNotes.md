@@ -4,4 +4,4 @@ Stable 1.0.0
 
 Stable 1.0.1
 - Code validated with PMD
-- Some code fixes are to be solved.
+- Some code fixes are to be solved in ObjectTraining class.
