@@ -13,7 +13,10 @@ import java.util.List;
 
 public class ObjectsTraining {
 
-	public static void main(String[] args) { // NOPMD - comment
+	/**
+	 * ObjectsTraining class comments
+	 */
+	public static void main(String[] args) { 
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
 		BufferedReader passengerFile = null;

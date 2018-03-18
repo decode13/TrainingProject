@@ -4,38 +4,74 @@ package com.umbrrella.java.training.objects;
  * Vechicle base class. Will be extended by specific vehicles.
  *
  */
-
 public class Vehicle {
 
-	private String manufacturer; // NOPMD
-	private String modelNo; // NOPMD
+	/**
+	 *  
+	 */
+	private String manufacturer;
+	
+	/**
+	 * 
+	 */
+	private String modelNo; 
 
-	protected transient Passenger seats[][] = new Passenger[0][0]; // NOPMD
-	protected String plateNo; // NOPMD
-	protected String destination; // NOPMD
+	/**
+	 * 
+	 */
+	protected transient Passenger seats[][] = new Passenger[0][0]; 
+	
+	/**
+	 * 
+	 */
+	protected String plateNo; 
+	
+	/**
+	 * 
+	 */
+	protected String destination; 
 
-	protected Vehicle() { // NOPMD
-		// This constructor is intentionally empty. Nothing special is needed here.
-
+	/**
+	 * 
+	 */
+	protected Vehicle() { 
+		// This constructor is intentionally empty. 
+		// Nothing special is needed here.
 	}
 
-	protected String getManufacturer() { // NOPMD
+	/**
+	 * @return
+	 */
+	protected String getManufacturer() { 
 		return manufacturer;
 	}
 
-	protected String getModelNo() { // NOPMD
+	/**
+	 * @return
+	 */
+	protected String getModelNo() { 
 		return modelNo;
 	}
 
-	protected void setManufacturer(final String manufacturer) { // NOPMD
+	/**
+	 * @param manufacturer
+	 */
+	protected void setManufacturer(final String manufacturer) { 
 		this.manufacturer = manufacturer;
 	}
 
-	protected void setModelNo(final String modelNo) { // NOPMD
+	/**
+	 * @param modelNo
+	 */
+	protected void setModelNo(final String modelNo) { 
 		this.modelNo = modelNo;
 	}
 
-	protected String reserveSeat(final Passenger passenger) { // NOPMD
+	/**
+	 * @param passenger
+	 * @return
+	 */
+	protected String reserveSeat(final Passenger passenger) { 
 		int rows = 0;
 		int columns = 0;
 		boolean isSeated = false;
@@ -58,7 +94,10 @@ public class Vehicle {
 		return Integer.toString(seat);
 	}
 
-	protected void listSeats() { // NOPMD
+	/**
+	 * 
+	 */
+	protected void listSeats() { 
 		int rows = 0;
 		int columns = 0;
 		String output;
@@ -69,11 +108,11 @@ public class Vehicle {
 				final int seat = rows * seats[0].length + columns + 1;
 				if (seats[rows][columns] == null) {
 					output = "Seat " + seat + ": " + "Empty";
-					System.out.println(output);// NOPMD
+					System.out.println(output); // NOPMD on 18/03/18 12:47, with reason: SystemPrintln
 				} else {
-					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " " // NOPMD - false LawOfDemeter
-							+ seats[rows][columns].getLastName();// NOPMD
-					System.out.println(output);// NOPMD
+					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " "  // NOPMD on 18/03/18 12:46, with reason: LawOfDemeter
+							+ seats[rows][columns].getLastName(); // NOPMD on 18/03/18 12:46, with reason: LawOfDemeter
+					System.out.println(output); // NOPMD on 18/03/18 12:47, with reason: SystemPrintln
 				}
 			}
 		}
