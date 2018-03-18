@@ -6,72 +6,49 @@ package com.umbrrella.java.training.objects;
  */
 public class Vehicle {
 
-	/**
-	 *  
-	 */
+	/** Private declaration comment */
 	private String manufacturer;
-	
-	/**
-	 * 
-	 */
-	private String modelNo; 
 
-	/**
-	 * 
-	 */
-	protected transient Passenger seats[][] = new Passenger[0][0]; 
-	
-	/**
-	 * 
-	 */
-	protected String plateNo; 
-	
-	/**
-	 * 
-	 */
-	protected String destination; 
+	/** Private declaration comment */
+	private String modelNo;
 
-	/**
-	 * 
-	 */
-	protected Vehicle() { 
-		// This constructor is intentionally empty. 
+	/** Protected declaration comment */
+	protected transient Passenger seats[][] = new Passenger[0][0];
+
+	/** Protected declaration comment */
+	protected String plateNo;
+
+	/** Protected declaration comment */
+	protected String destination;
+
+	/** Constructor declaration comment */
+	protected Vehicle() {
+		// This constructor is intentionally empty.
 		// Nothing special is needed here.
 	}
 
-	/**
-	 * @return
-	 */
-	protected String getManufacturer() { 
+	/** Getters / Setters comment */
+	protected String getManufacturer() {
 		return manufacturer;
 	}
 
-	/**
-	 * @return
-	 */
-	protected String getModelNo() { 
+	/** Getters / Setters comment */
+	protected String getModelNo() {
 		return modelNo;
 	}
 
-	/**
-	 * @param manufacturer
-	 */
-	protected void setManufacturer(final String manufacturer) { 
+	/** Getters / Setters comment */
+	protected void setManufacturer(final String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
 
-	/**
-	 * @param modelNo
-	 */
-	protected void setModelNo(final String modelNo) { 
+	/** Getters / Setters comment */
+	protected void setModelNo(final String modelNo) {
 		this.modelNo = modelNo;
 	}
 
-	/**
-	 * @param passenger
-	 * @return
-	 */
-	protected String reserveSeat(final Passenger passenger) { 
+	/** Method comment */
+	protected String reserveSeat(final Passenger passenger) {
 		int rows = 0;
 		int columns = 0;
 		boolean isSeated = false;
@@ -94,10 +71,8 @@ public class Vehicle {
 		return Integer.toString(seat);
 	}
 
-	/**
-	 * 
-	 */
-	protected void listSeats() { 
+	/** Method comment */
+	protected void listSeats() {
 		int rows = 0;
 		int columns = 0;
 		String output;
@@ -110,7 +85,9 @@ public class Vehicle {
 					output = "Seat " + seat + ": " + "Empty";
 					System.out.println(output); // NOPMD on 18/03/18 12:47, with reason: SystemPrintln
 				} else {
-					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " "  // NOPMD on 18/03/18 12:46, with reason: LawOfDemeter
+					output = "Seat " + seat + ": " + seats[rows][columns].getFirstName() + " " // NOPMD
+							// on 18/03/18 12:46, with reason: LawOfDemeter
+							
 							+ seats[rows][columns].getLastName(); // NOPMD on 18/03/18 12:46, with reason: LawOfDemeter
 					System.out.println(output); // NOPMD on 18/03/18 12:47, with reason: SystemPrintln
 				}

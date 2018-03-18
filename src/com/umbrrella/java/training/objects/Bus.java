@@ -1,17 +1,19 @@
 package com.umbrrella.java.training.objects;
 
-public class Bus extends Vehicle { // NOPMD - short class name
-	/**
-	 * Bus subclass. Will override reserveSeat, so the no same gender on same row.
-	 *
-	 */
+/**
+ * Bus subclass. Will override reserveSeat, so the no same gender on same row.
+ */
+public class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: ShortClassName
+
+	/** Some comment here */
 	public Bus() {
 		super();
 		seats = new Passenger[4][2];
 
 	}
 
-	protected String reserveSeat(Passenger p) { // NOPMD - comment
+	/** Method comment */
+	protected String reserveSeat(final Passenger passenger) {
 		int rows = 0;
 		int columns = 0;
 		boolean isSeated = false;
@@ -23,11 +25,14 @@ public class Bus extends Vehicle { // NOPMD - short class name
 			for (columns = 0; columns < seats[rows].length; columns++) {
 				if (seats[rows][columns] == null) {
 
-					if ((seats[rows][0] == null || !seats[rows][0].getGender().equals(p.getGender())) && columns == 1) {  // NOPMD - false LawOfDemeter
+					if ((seats[rows][0] == null || !seats[rows][0].getGender().equals(passenger.getGender())) // NOPMD
+							// on 18/03/18 13:46, with reason: LawOfDemeter
+
+							&& columns == 1) { // NOPMD on 18/03/18 13:46, with reason: LawOfDemeter
 						continue;
 					}
 
-					seats[rows][columns] = p;
+					seats[rows][columns] = passenger;
 					isSeated = true;
 					break;
 				}

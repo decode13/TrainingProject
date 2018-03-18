@@ -1,17 +1,20 @@
 package com.umbrrella.java.training.objects;
 
-public class Car extends Vehicle {  // NOPMD - comment
-	/**
-	 * Car subclass. Will override reserveSeat, so the seat 1 has driver license.
-	 *
-	 */
+/**
+ * Car subclass. Will override reserveSeat, so the seat 1 has driver license.
+ *
+ */
+public class Car extends Vehicle { // NOPMD on 18/03/18 13:56, with reason: ShortClassName
+
+	/** Some comment here */
 	public Car() {
 		super();
 		seats = new Passenger[2][2];
 
 	}
 
-	protected String reserveSeat(final Passenger passenger) { // NOPMD - comment
+	/** Method comment */
+	protected String reserveSeat(final Passenger passenger) {
 		int rows = 0;
 		int columns = 0;
 		boolean isSeated = false;
@@ -29,7 +32,6 @@ public class Car extends Vehicle {  // NOPMD - comment
 					if (rows == 0 && columns == 0 && !hasDriverLicense) {
 						continue;
 					}
-
 					seats[rows][columns] = passenger;
 					isSeated = true;
 					break;
