@@ -6,7 +6,7 @@ package com.umbrrella.java.training.objects;
 class Passenger {
 
 	/** Private declaration comment */
-	private final int passengerID;
+	private final transient int passengerID;
 
 	/** Private declaration comment */
 	private final String firstName;
@@ -21,7 +21,7 @@ class Passenger {
 	private final String gender;
 
 	/** Constructor comment */
-	Passenger(final String... passengerArray) {
+	Passenger(/* default */ final String... passengerArray) {
 
 		this.passengerID = Integer.parseInt(passengerArray[0]);
 		this.firstName = passengerArray[1];

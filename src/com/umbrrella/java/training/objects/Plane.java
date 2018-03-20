@@ -5,7 +5,7 @@ package com.umbrrella.java.training.objects;
  *
  */
 class Plane extends Vehicle {
-	/** Some comment here */
+    /** Some comment here */
     Plane() {
 		super();
 		seats = new Passenger[4][5];

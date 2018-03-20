@@ -37,9 +37,7 @@ final class PassengerSeating {
         sedan.setModelNo("Passat");
         sedan.plateNo = "C-AR-902813";
         sedan.destination = "Munich";
-        header.append("Seating for vehicle type: Car, model: ").append(sedan.getManufacturer()).append(" ");
-        header.append(sedan.getModelNo()).append(", plate number: ").append(sedan.plateNo);
-        header.append(", with destination: ").append(sedan.destination);
+        header.append("Seating for vehicle type: Car, model: ").append(sedan.getManufacturer()).append(' ').append(sedan.getModelNo()).append(", plate number: ").append(sedan.plateNo).append(", with destination: ").append(sedan.destination);
         System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
         System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 
@@ -65,9 +63,7 @@ final class PassengerSeating {
         smallBus.setModelNo("Wheels");
         smallBus.plateNo = "B-US-827643";
         smallBus.destination = "Graz";
-        header.append("Seating for vehicle type: Bus, model: ").append(smallBus.getManufacturer()).append(" ");
-        header.append(smallBus.getModelNo()).append(", plate number: ").append(smallBus.plateNo);
-        header.append(", with destination: ").append(smallBus.destination);
+        header.append("Seating for vehicle type: Bus, model: ").append(smallBus.getManufacturer()).append(' ').append(smallBus.getModelNo()).append(", plate number: ").append(smallBus.plateNo).append(", with destination: ").append(smallBus.destination);
         System.out.println(header.toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
         System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
 
@@ -92,9 +88,7 @@ final class PassengerSeating {
         tinyPlane.setModelNo("Crow");
         tinyPlane.plateNo = "DE-12319908";
         tinyPlane.destination = "Paris";
-        header.append("Seating for vehicle type: Plane, model: ").append(tinyPlane.getManufacturer());
-        header.append(" ").append(tinyPlane.getModelNo()).append(", plate number: ");
-        header.append(tinyPlane.plateNo).append(", with destination: ").append(tinyPlane.destination);
+        header.append("Seating for vehicle type: Plane, model: ").append(tinyPlane.getManufacturer()).append(' ').append(tinyPlane.getModelNo()).append(", plate number: ").append(tinyPlane.plateNo).append(", with destination: ").append(tinyPlane.destination);
         System.out.println(header.toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
         System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 

@@ -6,7 +6,7 @@ package com.umbrrella.java.training.objects;
 class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: ShortClassName
 
 	/** Some comment here */
-	Bus() {
+	/* default */ Bus() {
 		super();
 		seats = new Passenger[4][2];
 
@@ -14,7 +14,7 @@ class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: ShortClassN
 
 	/** Method comment */
 	@Override
-	void reserveSeat(final Passenger passenger) {
+	/* default */ void reserveSeat(final Passenger passenger) {
 		int rows;
 		int columns;
 		boolean isSeated = false;
