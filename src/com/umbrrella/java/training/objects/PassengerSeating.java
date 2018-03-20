@@ -117,7 +117,7 @@ final class PassengerSeating {
         System.out.println(""); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
     }
 
-    private String printHeader(final String... headerArray){
+    private String printHeader(final String... headerArray) {
 
         final StringBuilder header = new StringBuilder(128);
 
