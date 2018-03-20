@@ -30,16 +30,21 @@ final class PassengerSeating {
      * some comment
      */
     private void carSeatReservation(final String csvFile) {
-        final StringBuffer header = new StringBuffer(128);
 
         final Car sedan = new Car();
         sedan.setManufacturer("Volkswagen");
         sedan.setModelNo("Passat");
         sedan.plateNo = "C-AR-902813";
         sedan.destination = "Munich";
-        header.append("Seating for vehicle type: Car, model: ").append(sedan.getManufacturer()).append(' ').append(sedan.getModelNo()).append(", plate number: ").append(sedan.plateNo).append(", with destination: ").append(sedan.destination);
-        System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
-        System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+
+        String[] words = new String[5];
+        words[0] = "Car";
+        words[1] = sedan.getManufacturer();
+        words[2] = sedan.getModelNo();
+        words[3] = sedan.plateNo;
+        words[4] = sedan.destination;
+
+        System.out.println(printHeader(words)); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 
         final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
@@ -56,16 +61,21 @@ final class PassengerSeating {
      * some comment
      */
     private void busSeatReservation(final String csvFile) {
-        final StringBuilder header = new StringBuilder(128);
 
         final Bus smallBus = new Bus();
         smallBus.setManufacturer("Iveco");
         smallBus.setModelNo("Wheels");
         smallBus.plateNo = "B-US-827643";
         smallBus.destination = "Graz";
-        header.append("Seating for vehicle type: Bus, model: ").append(smallBus.getManufacturer()).append(' ').append(smallBus.getModelNo()).append(", plate number: ").append(smallBus.plateNo).append(", with destination: ").append(smallBus.destination);
-        System.out.println(header.toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
-        System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
+
+        String[] words = new String[5];
+        words[0] = "Bus";
+        words[1] = smallBus.getManufacturer();
+        words[2] = smallBus.getModelNo();
+        words[3] = smallBus.plateNo;
+        words[4] = smallBus.destination;
+
+        System.out.println(printHeader(words)); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 
         final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
@@ -81,16 +91,23 @@ final class PassengerSeating {
      * some comment
      */
     private void planeSeatReservation(final String csvFile) {
-        final StringBuilder header = new StringBuilder(128);
 
         final Plane tinyPlane = new Plane();
         tinyPlane.setManufacturer("Airbus");
         tinyPlane.setModelNo("Crow");
         tinyPlane.plateNo = "DE-12319908";
         tinyPlane.destination = "Paris";
-        header.append("Seating for vehicle type: Plane, model: ").append(tinyPlane.getManufacturer()).append(' ').append(tinyPlane.getModelNo()).append(", plate number: ").append(tinyPlane.plateNo).append(", with destination: ").append(tinyPlane.destination);
-        System.out.println(header.toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
-        System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+
+
+        String[] words = new String[5];
+        words[0] = "Plane";
+        words[1] = tinyPlane.getManufacturer();
+        words[2] = tinyPlane.getModelNo();
+        words[3] = tinyPlane.plateNo;
+        words[4] = tinyPlane.destination;
+
+        System.out.println(printHeader(words)); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+
 
         final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
@@ -102,10 +119,21 @@ final class PassengerSeating {
         System.out.println(""); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
     }
 
-    private String separator(final String title) {
+    private String printHeader(final String... headerArray){
+
+        final StringBuilder header = new StringBuilder(128);
+
+        header.append("Seating for vehicle type: ").append(headerArray[0]).append(", model: ").append(headerArray[1]);
+        header.append(' ').append(headerArray[2]).append(", plate number: ").append(headerArray[3]);
+        header.append(", with destination: ").append(headerArray[4]).append("\n").append(separator(header.length()));
+
+        return header.toString();
+    }
+
+    private String separator(final int headerLength) {
 
         final StringBuilder separator = new StringBuilder();
-        for (int h = 0; h < title.length(); h++) {
+        for (int h = 0; h < headerLength; h++) {
             separator.append('-');
         }
 
