@@ -10,7 +10,7 @@ final public class PassengerSeating {
 	/**
 	 * PassengerSeating main class comments
 	 */
-	public static void main(final String[] args) {
+	public static void main(final String... args) {
 
 		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
 
