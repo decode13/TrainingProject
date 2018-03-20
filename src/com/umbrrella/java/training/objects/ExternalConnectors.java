@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.umbrrella.java.training.objects;
 
 import java.io.BufferedReader;
@@ -14,7 +11,7 @@ import java.util.List;
 /**
  *
  */
-final public class ExternalConnectors {
+final class ExternalConnectors {
 	
 	private ExternalConnectors() {
 		// Nothing to do here.
@@ -23,7 +20,7 @@ final public class ExternalConnectors {
 	public static List<String> readFromCSV(final String fileName) {
 		
 		final Path pathToFile = Paths.get(fileName);
-		final List<String> output = new ArrayList<String>();
+		final List<String> output = new ArrayList<>();
 		
 		try (BufferedReader buffer = Files.newBufferedReader(pathToFile)) {
 			

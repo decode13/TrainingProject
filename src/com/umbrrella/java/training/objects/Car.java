@@ -4,10 +4,10 @@ package com.umbrrella.java.training.objects;
  * Car subclass. Will override reserveSeat, so the seat 1 has driver license.
  *
  */
-public class Car extends Vehicle { // NOPMD on 18/03/18 13:56, with reason: ShortClassName
+class Car extends Vehicle { // NOPMD on 18/03/18 13:56, with reason: ShortClassName
 
 	/** Some comment here */
-	public Car() {
+	Car() {
 		super();
 		seats = new Passenger[2][2];
 
@@ -15,11 +15,11 @@ public class Car extends Vehicle { // NOPMD on 18/03/18 13:56, with reason: Shor
 
 	/** Method comment */
 	@Override
-	protected String reserveSeat(final Passenger passenger) {
-		int rows = 0;
-		int columns = 0;
+	void reserveSeat(final Passenger passenger) {
+		int rows;
+		int columns;
 		boolean isSeated = false;
-		boolean hasDriverLicense = false;
+		boolean hasDriverLicense;
 
 		hasDriverLicense = passenger.isDriverLicense();
 
@@ -40,9 +40,8 @@ public class Car extends Vehicle { // NOPMD on 18/03/18 13:56, with reason: Shor
 			}
 		}
 
-		final int seat = (rows - 1) * seats[0].length + columns + 1;
+//		final int seat = (rows - 1) * seats[0].length + columns + 1;
 
-		return Integer.toString(seat);
-	}
+    }
 
 }

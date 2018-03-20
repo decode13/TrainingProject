@@ -4,9 +4,9 @@ package com.umbrrella.java.training.objects;
  * Plane subclass. Will override listSeats, so numbering columns has letters.
  *
  */
-public class Plane extends Vehicle {
+class Plane extends Vehicle {
 	/** Some comment here */
-	public Plane() {
+    Plane() {
 		super();
 		seats = new Passenger[4][5];
 
@@ -14,9 +14,9 @@ public class Plane extends Vehicle {
 
 	/** @see com.umbrrella.java.training.objects.Vehicle#listSeats() */
 	@Override
-	protected void listSeats() {
-		int rows = 0;
-		int columns = 0;
+    void listSeats() {
+		int rows;
+		int columns;
 		String output;
 		final String[] labels = new String[] { "A", "B", "C", "D", "E" };
 

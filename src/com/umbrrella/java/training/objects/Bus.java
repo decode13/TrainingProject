@@ -3,10 +3,10 @@ package com.umbrrella.java.training.objects;
 /**
  * Bus subclass. Will override reserveSeat, so the no same gender on same row.
  */
-public class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: ShortClassName
+class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: ShortClassName
 
 	/** Some comment here */
-	public Bus() {
+	Bus() {
 		super();
 		seats = new Passenger[4][2];
 
@@ -14,9 +14,9 @@ public class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: Shor
 
 	/** Method comment */
 	@Override
-	protected String reserveSeat(final Passenger passenger) {
-		int rows = 0;
-		int columns = 0;
+	void reserveSeat(final Passenger passenger) {
+		int rows;
+		int columns;
 		boolean isSeated = false;
 
 		for (rows = 0; rows < seats.length; rows++) {
@@ -40,8 +40,7 @@ public class Bus extends Vehicle { // NOPMD on 18/03/18 13:46, with reason: Shor
 			}
 		}
 
-		final int seat = (rows - 1) * seats[0].length + columns + 1;
+//		final int seat = (rows - 1) * seats[0].length + columns + 1;
 
-		return Integer.toString(seat);
-	}
+    }
 }

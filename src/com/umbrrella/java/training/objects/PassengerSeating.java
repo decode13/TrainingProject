@@ -5,107 +5,117 @@ import java.util.List;
 /**
  * This is the main class.
  */
-final public class PassengerSeating {
+final class PassengerSeating {
 
-	/**
-	 * PassengerSeating main class comments
-	 */
-	public static void main(final String... args) {
+    private PassengerSeating() {
+        // Nothing to do here.
+    }
 
-		final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
+    /**
+     * PassengerSeating main class comments
+     */
+    public static void main(final String... args) {
 
-		final PassengerSeating seating = new PassengerSeating();
+        final String csvFile = System.getProperty("user.dir") + "/" + "resources/PassengersList.txt";
 
-		seating.carSeatReservation(csvFile);
-		seating.busSeatReservation(csvFile);
-		seating.planeSeatReservation(csvFile);
+        final PassengerSeating seating = new PassengerSeating();
 
-	}
+        seating.carSeatReservation(csvFile);
+        seating.busSeatReservation(csvFile);
+        seating.planeSeatReservation(csvFile);
 
-	private PassengerSeating() {
-		// Nothing to do here.
-	}
+    }
 
-	private void carSeatReservation(final String csvFile) {
-		final StringBuffer header = new StringBuffer(128);
+    /**
+     * some comment
+     */
+    private void carSeatReservation(final String csvFile) {
+        final StringBuffer header = new StringBuffer(128);
 
-		final Car sedan = new Car();
-		sedan.setManufacturer("Volkswagen");
-		sedan.setModelNo("Passat");
-		sedan.plateNo = "C-AR-902813";
-		sedan.destination = "Munich";
-		header.append("Seating for vehicle type: Car, model: " + sedan.getManufacturer() + " " + sedan.getModelNo()
-				+ ", plate number: " + sedan.plateNo + ", with destination: " + sedan.destination);
-		System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString())); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+        final Car sedan = new Car();
+        sedan.setManufacturer("Volkswagen");
+        sedan.setModelNo("Passat");
+        sedan.plateNo = "C-AR-902813";
+        sedan.destination = "Munich";
+        header.append("Seating for vehicle type: Car, model: ").append(sedan.getManufacturer()).append(" ");
+        header.append(sedan.getModelNo()).append(", plate number: ").append(sedan.plateNo);
+        header.append(", with destination: ").append(sedan.destination);
+        System.out.println(header); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+        System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 
-		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
+        final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
-		for (final Passenger passenger : passengerList) {
-			sedan.reserveSeat(passenger);
-		}
+        for (final Passenger passenger : passengerList) {
+            sedan.reserveSeat(passenger);
+        }
 
-		sedan.listSeats();
-		System.out.println(""); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
+        sedan.listSeats();
+        System.out.println(""); // NOPMD on 18/03/18 18:51, with reason: SystemPrintln
 
-	}
+    }
 
-	private void busSeatReservation(final String csvFile) {
-		final StringBuffer header = new StringBuffer(128);
+    /**
+     * some comment
+     */
+    private void busSeatReservation(final String csvFile) {
+        final StringBuilder header = new StringBuilder(128);
 
-		final Bus smallBus = new Bus();
-		smallBus.setManufacturer("Iveco");
-		smallBus.setModelNo("Wheels");
-		smallBus.plateNo = "B-US-827643";
-		smallBus.destination = "Graz";
-		header.append(
-				"Seating for vehicle type: Bus, model: " + smallBus.getManufacturer() + " " + smallBus.getModelNo()
-						+ ", plate number: " + smallBus.plateNo + ", with destination: " + smallBus.destination);
-		System.out.println(header.toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString())); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
+        final Bus smallBus = new Bus();
+        smallBus.setManufacturer("Iveco");
+        smallBus.setModelNo("Wheels");
+        smallBus.plateNo = "B-US-827643";
+        smallBus.destination = "Graz";
+        header.append("Seating for vehicle type: Bus, model: ").append(smallBus.getManufacturer()).append(" ");
+        header.append(smallBus.getModelNo()).append(", plate number: ").append(smallBus.plateNo);
+        header.append(", with destination: ").append(smallBus.destination);
+        System.out.println(header.toString()); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
+        System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
 
-		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
+        final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
-		for (final Passenger passenger : passengerList) {
-			smallBus.reserveSeat(passenger);
-		}
+        for (final Passenger passenger : passengerList) {
+            smallBus.reserveSeat(passenger);
+        }
 
-		smallBus.listSeats();
-		System.out.println(""); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
-	}
+        smallBus.listSeats();
+        System.out.println(""); // NOPMD on 18/03/18 18:52, with reason: SystemPrintln
+    }
 
-	private void planeSeatReservation(final String csvFile) {
-		final StringBuffer header = new StringBuffer(128);
+    /**
+     * some comment
+     */
+    private void planeSeatReservation(final String csvFile) {
+        final StringBuilder header = new StringBuilder(128);
 
-		final Plane tinyPlane = new Plane();
-		tinyPlane.setManufacturer("Airbus");
-		tinyPlane.setModelNo("Crow");
-		tinyPlane.plateNo = "DE-12319908";
-		tinyPlane.destination = "Paris";
-		header.append(
-				"Seating for vehicle type: Plane, model: " + tinyPlane.getManufacturer() + " " + tinyPlane.getModelNo()
-						+ ", plate number: " + tinyPlane.plateNo + ", with destination: " + tinyPlane.destination);
-		System.out.println(header.toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
-		System.out.println(sepparator(header.toString())); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+        final Plane tinyPlane = new Plane();
+        tinyPlane.setManufacturer("Airbus");
+        tinyPlane.setModelNo("Crow");
+        tinyPlane.plateNo = "DE-12319908";
+        tinyPlane.destination = "Paris";
+        header.append("Seating for vehicle type: Plane, model: ").append(tinyPlane.getManufacturer());
+        header.append(" ").append(tinyPlane.getModelNo()).append(", plate number: ");
+        header.append(tinyPlane.plateNo).append(", with destination: ").append(tinyPlane.destination);
+        System.out.println(header.toString()); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+        System.out.println(separator(header.toString())); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
 
-		final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
+        final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
-		for (final Passenger passenger : passengerList) {
-			tinyPlane.reserveSeat(passenger);
-		}
+        for (final Passenger passenger : passengerList) {
+            tinyPlane.reserveSeat(passenger);
+        }
 
-		tinyPlane.listSeats();
-		System.out.println(""); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
-	}
+        tinyPlane.listSeats();
+        System.out.println(""); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
+    }
 
-	private String sepparator(final String title) {
+    private String separator(final String title) {
 
-		final StringBuffer separator = new StringBuffer();
-		for (int h = 0; h < title.length(); h++) {
-			separator.append('-');
-		}
+        final StringBuilder separator = new StringBuilder();
+        for (int h = 0; h < title.length(); h++) {
+            separator.append('-');
+        }
 
-		return separator.toString();
+        return separator.toString();
 
-	}
+    }
 }

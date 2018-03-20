@@ -1,10 +1,10 @@
 package com.umbrrella.java.training.objects;
 
 /**
- * Vechicle base class. Will be extended by specific vehicles.
+ * Vehicle base class. Will be extended by specific vehicles.
  *
  */
-public class Vehicle {
+class Vehicle {
 
 	/** Private declaration comment */
 	private String manufacturer;
@@ -13,40 +13,40 @@ public class Vehicle {
 	private String modelNo;
 
 	/** Protected declaration comment */
-	protected transient Passenger seats[][] = new Passenger[0][0];
+	transient Passenger[][] seats = new Passenger[0][0];
 
 	/** Protected declaration comment */
-	protected String plateNo;
+    String plateNo;
 
 	/** Protected declaration comment */
-	protected String destination;
+    String destination;
 
 	/** Constructor declaration comment */
-	protected Vehicle() {
+    Vehicle() {
 		// This constructor is intentionally empty.
 		// Nothing special is needed here.
 	}
 
-	protected String getManufacturer() {
+	String getManufacturer() {
 		return manufacturer;
 	}
 
-	protected String getModelNo() {
+	String getModelNo() {
 		return modelNo;
 	}
 
-	protected void setManufacturer(final String manufacturer) {
+	void setManufacturer(final String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
 
-	protected void setModelNo(final String modelNo) {
+	void setModelNo(final String modelNo) {
 		this.modelNo = modelNo;
 	}
 
 	/** Method comment */
-	protected String reserveSeat(final Passenger passenger) {
-		int rows = 0;
-		int columns = 0;
+    void reserveSeat(final Passenger passenger) {
+		int rows;
+		int columns;
 		boolean isSeated = false;
 
 		for (rows = 0; rows < seats.length; rows++) {
@@ -62,15 +62,14 @@ public class Vehicle {
 			}
 		}
 
-		final int seat = (rows - 1) * seats[0].length + columns + 1;
+//		final int seat = (rows - 1) * seats[0].length + columns + 1;
 
-		return Integer.toString(seat);
 	}
 
 	/** Method comment */
-	protected void listSeats() {
-		int rows = 0;
-		int columns = 0;
+    void listSeats() {
+		int rows;
+		int columns;
 		String output;
 
 		for (rows = 0; rows < seats.length; rows++) {

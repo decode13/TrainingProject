@@ -3,25 +3,25 @@ package com.umbrrella.java.training.objects;
 /**
  * Passenger object class.
  */
-public class Passenger {
+class Passenger {
 
 	/** Private declaration comment */
-	private int passengerID;
+	private final int passengerID;
 
 	/** Private declaration comment */
-	private String firstName;
+	private final String firstName;
 
 	/** Private declaration comment */
-	private String lastName;
+	private final String lastName;
 
 	/** Private declaration comment */
-	private boolean driverLicense;
+	private final boolean driverLicense;
 
 	/** Private declaration comment */
-	private String gender;
+	private final String gender;
 
 	/** Constructor comment */
-	public Passenger(final String... passengerArray) {
+	Passenger(final String... passengerArray) {
 
 		this.passengerID = Integer.parseInt(passengerArray[0]);
 		this.firstName = passengerArray[1];
@@ -30,55 +30,67 @@ public class Passenger {
 		this.gender = passengerArray[4];
 	}
 
-	/** Constructor comment */
-	public Passenger(final int passengerID, final String firstName, final String lastName, final boolean driverLicense,
-			final String gender) {
-		this.passengerID = passengerID;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.driverLicense = driverLicense;
-		this.gender = gender;
-	}
+// --Commented out by Inspection START (20/03/2018, 18:27):
+//	/** Constructor comment */
+////	public Passenger(final int passengerID, final String firstName, final String lastName, final boolean driverLicense,
+////			final String gender) {
+////		this.passengerID = passengerID;
+////		this.firstName = firstName;
+////		this.lastName = lastName;
+////		this.driverLicense = driverLicense;
+////		this.gender = gender;
+////	}
+//
+//	public int getPassengerID() {
+//		return passengerID;
+//	}
+// --Commented out by Inspection STOP (20/03/2018, 18:27)
 
-	public int getPassengerID() {
-		return passengerID;
-	}
-
-	public void setPassengerID(final int passengerID) {
-		this.passengerID = passengerID;
-	}
+// --Commented out by Inspection START (20/03/2018, 18:27):
+//	public void setPassengerID(final int passengerID) {
+//		this.passengerID = passengerID;
+//	}
+// --Commented out by Inspection STOP (20/03/2018, 18:27)
 
 	public String getFirstName() {
 		return firstName;
 	}
 
-	public void setFirstName(final String firstName) {
-		this.firstName = firstName;
-	}
+// --Commented out by Inspection START (20/03/2018, 18:27):
+//	public void setFirstName(final String firstName) {
+//		this.firstName = firstName;
+//	}
+// --Commented out by Inspection STOP (20/03/2018, 18:27)
 
 	public String getLastName() {
 		return lastName;
 	}
 
-	public void setLastName(final String lastName) {
-		this.lastName = lastName;
-	}
+// --Commented out by Inspection START (20/03/2018, 18:27):
+//	public void setLastName(final String lastName) {
+//		this.lastName = lastName;
+//	}
+// --Commented out by Inspection STOP (20/03/2018, 18:27)
 
 	public boolean isDriverLicense() {
 		return driverLicense;
 	}
 
-	public void setDriverLicense(final boolean driverLicense) {
-		this.driverLicense = driverLicense;
-	}
+// --Commented out by Inspection START (20/03/2018, 18:27):
+//	public void setDriverLicense(final boolean driverLicense) {
+//		this.driverLicense = driverLicense;
+//	}
+// --Commented out by Inspection STOP (20/03/2018, 18:27)
 
 	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(final String gender) {
-		this.gender = gender;
-	}
+// --Commented out by Inspection START (20/03/2018, 18:27):
+//	public void setGender(final String gender) {
+//		this.gender = gender;
+//	}
+// --Commented out by Inspection STOP (20/03/2018, 18:27)
 
 	@Override
 	public String toString() {
