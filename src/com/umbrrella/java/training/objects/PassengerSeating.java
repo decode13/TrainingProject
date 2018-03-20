@@ -98,7 +98,6 @@ final class PassengerSeating {
         tinyPlane.plateNo = "DE-12319908";
         tinyPlane.destination = "Paris";
 
-
         String[] words = new String[5];
         words[0] = "Plane";
         words[1] = tinyPlane.getManufacturer();
@@ -107,7 +106,6 @@ final class PassengerSeating {
         words[4] = tinyPlane.destination;
 
         System.out.println(printHeader(words)); // NOPMD on 18/03/18 18:53, with reason: SystemPrintln
-
 
         final List<Passenger> passengerList = GetPassengerList.getFromCSV(csvFile);
 
@@ -125,7 +123,7 @@ final class PassengerSeating {
 
         header.append("Seating for vehicle type: ").append(headerArray[0]).append(", model: ").append(headerArray[1]);
         header.append(' ').append(headerArray[2]).append(", plate number: ").append(headerArray[3]);
-        header.append(", with destination: ").append(headerArray[4]).append("\n").append(separator(header.length()));
+        header.append(", with destination: ").append(headerArray[4]).append('\n').append(separator(header.length()));
 
         return header.toString();
     }
